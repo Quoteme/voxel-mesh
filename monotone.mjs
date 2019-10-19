@@ -270,4 +270,6 @@ return function(volume, dims) {
 }
 })();
 
-export default MonotoneMesh;
+export{
+	MonotoneMesh
+};

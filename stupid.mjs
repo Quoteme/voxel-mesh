@@ -50,4 +50,6 @@ function StupidMesh(volume, dims) {
   return { vertices:vertices, faces:faces };
 }
 
-export default StupidMesh
+export{
+	StupidMesh
+};

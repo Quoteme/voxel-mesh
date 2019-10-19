@@ -66,4 +66,6 @@ function CulledMesh(volume, dims) {
   return { vertices:vertices, faces:faces };
 }
 
-export default CulledMesh;
+export{
+	CulledMesh
+};

@@ -116,4 +116,6 @@ return function(volume, dims) {
 }
 })();
 
-export default GreedyMesh;
+export{
+	GreedyMesh
+};
