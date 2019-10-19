@@ -1,5 +1,7 @@
 Generate a THREE.JS mesh from voxel data.
 
+WEBGL DEMO : [http://mikolalysenko.github.com/MinecraftMeshes2/](http://mikolalysenko.github.com/MinecraftMeshes2/)
+
 ```bash
 git submodule add https://github.com/quoteme/voxel-mesh/ lib/voxel-mesh/
 ```
