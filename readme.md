@@ -1,51 +1,13 @@
-# voxel-mesh
+Generate a THREE.JS mesh from voxel data.
 
-generate a three.js mesh from voxel data. extracted from some code by @mikolalysenko
-
-- original repo: https://github.com/mikolalysenko/mikolalysenko.github.com/tree/master/MinecraftMeshes2
-- blog post: http://0fps.wordpress.com/2012/07/07/meshing-minecraft-part-2/
-- webgl demo: http://mikolalysenko.github.com/MinecraftMeshes2/
-
-# installation
-
-it is recommended that you use browserify to use this module
-
+```bash
+git submodule add https://github.com/quoteme/voxel-mesh/ lib/voxel-mesh/
 ```
-npm install voxel-mesh
-npm install browserify -g
-browserify -r voxel-mesh > voxel-mesh-browserified.js
-```
-
-# usage
 
 ```javascript
-var Mesh = require('voxel-mesh')
-var voxelData = require('voxel').generator['Hilly Terrain']
-var mesh = new Mesh(voxelData)
-mesh.createSurfaceMesh()
-threeJSScene.add(mesh)
+import * as MESHER from 'lib/voxel-mesh/voxelMesh.mjs'
+
+let voxData = {"voxels":{"0":255,"1":255,"2":255,"3":255,"4":255,"5":255,"6":255,"7":255,"8":255,"9":255,"10":255,"11":255,"12":255,"13":255,"14":255,"15":255,"16":255,"17":255,"18":255,"19":255,"20":255,"21":255,"22":255,"23":255,"24":255,"25":255,"26":255,"27":255,"28":255,"29":255,"30":255,"31":255,"32":255,"33":255,"34":255,"35":255,"36":255,"37":255,"38":255,"39":255,"40":255,"41":255,"42":255,"43":255,"44":255,"45":255,"46":255,"47":255,"48":255,"49":255,"50":255,"51":255,"52":255,"53":255,"54":255,"55":255,"56":255,"57":255,"58":255,"59":255,"60":255,"61":255,"62":255,"63":255},"dims":[4,4,4]}
+
+let mesh = MESHER.monotone(voxData.voxel, voxData.dims);
 ```
-
-## new Mesh(voxelData, meshingAlgorithm, scaleFactor)
-
-`voxelData` and `meshingAlgorithm` are required, `scaleFactor` defaults to `new Three.Vector3(10, 10, 10)`.
-
-## Mesh.prototype.createSurfaceMesh(material)
-
-returns the generated surface mesh. `material` defaults to `new THREE.MeshNormalMaterial()`. after calling this method your mesh will also have `.surfaceMesh` populated with the new mesh
-
-## Mesh.prototype.createWireMesh(hexColor)
-
-returns the generated wire mesh. `hexColor` defaults to `0xffffff`. after calling this method your mesh will also have `.wireMesh` populated with the new mesh
-
-## Mesh.prototype.addToScene(scene)
-
-convenience method for adding the currently generated meshes (either `surfaceMesh` or `wireMesh`) to a `three.js` scene instance
-
-## Mesh.prototype.setPosition(x, y, z)
-
-convenience method for setting the position of the currently generated meshes (either `surfaceMesh` or `wireMesh`)
-
-# license
-
-MIT
