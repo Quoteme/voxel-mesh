@@ -51,5 +51,5 @@ function StupidMesh(volume, dims) {
 }
 
 export{
-	StupidMesh
+	StupidMesh as stupid
 };

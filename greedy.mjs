@@ -117,5 +117,5 @@ return function(volume, dims) {
 })();
 
 export{
-	GreedyMesh
+	GreedyMesh as greedy
 };

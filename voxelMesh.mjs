@@ -1,4 +1,4 @@
-export { CulledMesh } from './culled.mjs'
-export { GreedyMesh } from './greedy.mjs'
-export { MonotoneMesh } from './monotone.mjs'
-export { StupidMesh } from './stupid.mjs'
+export { culled } from './culled.mjs'
+export { greedy } from './greedy.mjs'
+export { monotone } from './monotone.mjs'
+export { stupid } from './stupid.mjs'

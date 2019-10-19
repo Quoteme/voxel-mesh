@@ -67,5 +67,5 @@ function CulledMesh(volume, dims) {
 }
 
 export{
-	CulledMesh
+	CulledMesh as culled
 };

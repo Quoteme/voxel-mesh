@@ -271,5 +271,5 @@ return function(volume, dims) {
 })();
 
 export{
-	MonotoneMesh
+	MonotoneMesh as monotone
 };
