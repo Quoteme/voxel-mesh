@@ -1,4 +1,5 @@
 import * as THREE from './lib/three.module.js';
+import { stupid } from './mesher/stupid.mjs'
 
 export { culled } from './mesher/culled.mjs'
 export { greedy } from './mesher/greedy.mjs'
@@ -9,7 +10,7 @@ export {
 }
 
 // voxToGeometry :: [[[Bool]]] -> ([[Int]] -> Mesh) -> Geometry
-function voxToGeometry(vox, mesher=MESHER.stupid){
+function voxToGeometry(vox, mesher=stupid){
 	// create vertices and faces
 	let data = mesher(
 		vox.flat(2),
