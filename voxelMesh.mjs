@@ -43,11 +43,6 @@ function voxToGeometry(vox, mesher=stupid){
 			width: vertexLength(e[0],e[1]),
 			height: vertexLength(e[0],e[3])
 		}
-		if(len[0] != 1)
-			console.log(
-				e.map(i => data.vertices[i]),
-				len
-			);
 		geometry.faces.push(...f)
 		let w = len.width;
 		let h = len.height;
