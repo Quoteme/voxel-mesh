@@ -28,6 +28,10 @@ function voxToGeometry(vox, mesher=stupid){
 	data.vertices.forEach(e => geometry.vertices.push(
 		new THREE.Vector3(...e)
 	))
+	let vertexLength = (v,w) => Math.hypot(...[v,w]
+		.map(e => data.vertices[e])
+		.reduce((a,b) => a.map((_,i) => a[i]-b[i]))
+	)
 	data.faces.forEach((e,i) =>{
 		// find orthodognal vector to this face
 		// let v = data.vertices[e[0]]
@@ -35,16 +39,27 @@ function voxToGeometry(vox, mesher=stupid){
 			new THREE.Face3(e[2],e[3],e[0]),
 			new THREE.Face3(e[1],e[2],e[0]),
 		]
+		let len = {
+			width: vertexLength(e[0],e[1]),
+			height: vertexLength(e[0],e[3])
+		}
+		if(len[0] != 1)
+			console.log(
+				e.map(i => data.vertices[i]),
+				len
+			);
 		geometry.faces.push(...f)
+		let w = len.width;
+		let h = len.height;
 		geometry.faceVertexUvs[ 0 ].push(
 			[
-				new THREE.Vector2( 1, 1 ),
-				new THREE.Vector2( 0, 1 ),
+				new THREE.Vector2( w, h ),
+				new THREE.Vector2( 0, h ),
 				new THREE.Vector2( 0, 0 ),
 			],
 			[
-				new THREE.Vector2( 1, 0 ),
-				new THREE.Vector2( 1, 1 ),
+				new THREE.Vector2( w, 0 ),
+				new THREE.Vector2( w, h ),
 				new THREE.Vector2( 0, 0 ),
 			]
 		);
