@@ -1,7 +1,16 @@
-Generate a THREE.JS mesh from voxel data.
-Also supports the use of textures.
+# Voxel-Mesh
 
-WEBGL DEMO : [http://mikolalysenko.github.com/MinecraftMeshes2/](http://mikolalysenko.github.com/MinecraftMeshes2/)
+Generate THREE.JS meshes from voxel data.
+Also supports the use of textured voxels.
+
+### Example level from my game "Story"
+![Example from my game Story](https://i.imgur.com/ImeAlu3.gif)
+
+### Demo of the original code
+
+[http://mikolalysenko.github.com/MinecraftMeshes2/](http://mikolalysenko.github.com/MinecraftMeshes2/)
+
+### How To
 
 ```bash
 git submodule add https://github.com/quoteme/voxel-mesh/ lib/voxel-mesh/
