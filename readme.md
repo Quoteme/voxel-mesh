@@ -16,6 +16,30 @@ Also supports the use of textured voxels.
 git submodule add https://github.com/quoteme/voxel-mesh/ lib/voxel-mesh/
 ```
 
+##### Simple example
+
+```javascript
+import * as MESHER from 'lib/voxel-mesh/voxelMesh.mjs'
+
+// generate a simple surface in a 4x4x4 cube
+let geometry = MESHER.voxToGeometry(
+		new Array(4).fill(0).map( (_,x) =>
+			new Array(4).fill(0).map( (_,y) =>
+				new Array(4).fill(0).map( (_,z) => y==x-z ) ))
+	)
+geometry.scale(5,5,5);
+let material = new THREE.MeshBasicMaterial({
+    color: 0xffffff
+})
+let mesh = new THREE.Mesh( geometry, material );
+```
+
+This results in:
+
+![voxel-mesh.mjs example](https://i.imgur.com/GprXnu0.gif)
+
+##### Other examples
+
 ```javascript
 import * as MESHER from 'lib/voxel-mesh/voxelMesh.mjs'
 
